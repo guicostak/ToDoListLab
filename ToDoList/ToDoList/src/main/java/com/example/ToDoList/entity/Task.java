@@ -4,6 +4,7 @@ import com.example.ToDoList.entity.enums.TaskPriorityEnum;
 import com.example.ToDoList.entity.enums.TaskStatusEnum;
 import com.example.ToDoList.entity.enums.TaskTypeEnum;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -12,8 +13,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 
+@Schema(description = "A entidade representa uma Task")
 @Entity
 @Table(name = "Task")
 public class Task {
