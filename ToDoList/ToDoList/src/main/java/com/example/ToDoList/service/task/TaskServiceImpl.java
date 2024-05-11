@@ -59,7 +59,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     // Método para calcular o status com base no tipo de tarefa e sua data de conclusão
-    private TaskStatusEnum calculateStatus(Task task) {
+    public TaskStatusEnum calculateStatus(Task task) {
         LocalDate currentDate = LocalDate.now();
         if (task.getType() == TaskTypeEnum.DATA) {
             if (task.getDueDate().isBefore(currentDate)) {
@@ -80,7 +80,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     // Método para obter o status formatado
-    private String getStatusFormatted(Task task) {
+    public String getStatusFormatted(Task task) {
         TaskStatusEnum status = calculateStatus(task);
         if (task.getType() == TaskTypeEnum.DATA || task.getType() == TaskTypeEnum.PRAZO) {
             LocalDate currentDate = LocalDate.now();
@@ -101,7 +101,7 @@ public class TaskServiceImpl implements TaskService {
         }
     }
 
-    private boolean isDueDateValid(Task task) {
+    public boolean isDueDateValid(Task task) {
         if (task.getType() == TaskTypeEnum.DATA && task.getDueDate() != null) {
             LocalDate currentDate = LocalDate.now();
             return !task.getDueDate().isBefore(currentDate);
