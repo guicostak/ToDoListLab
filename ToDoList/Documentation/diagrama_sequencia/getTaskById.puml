@@ -1,0 +1,20 @@
+@startuml
+actor Client
+participant "Controller" as C
+participant "TaskService" as S
+participant "Repository" as R
+participant "Task" as T
+
+Client -> C: GET /tasks/{id}
+activate C
+C -> S: getTaskById(id)
+activate S
+S -> R: findById(id)
+activate R
+R --> S: Optional<Task>
+deactivate R
+S --> C: Task
+deactivate S
+C -> Client: 200 OK (Task)
+deactivate C
+@enduml

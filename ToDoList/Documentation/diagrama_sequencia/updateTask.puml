@@ -1,0 +1,29 @@
+@startuml
+actor Client
+participant "Controller" as C
+participant "TaskService" as S
+participant "Repository" as R
+participant "Task" as T
+
+Client -> C: PUT /tasks/{id}
+activate C
+C -> S: updateTask(id, updatedTask)
+activate S
+S -> R: existsById(id)
+activate R
+R --> S: boolean
+deactivate R
+
+alt Task exists
+    S -> R: save(updatedTask)
+    activate R
+    R --> S: Task
+    deactivate R
+    S --> C: Task
+else Task does not exist
+    S --> C: null
+end
+deactivate S
+C -> Client: 200 OK (Task)
+deactivate C
+@enduml
