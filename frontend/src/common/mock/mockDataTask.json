@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "title": "Example Task 1",
+      "description": "This is an example task description.",
+      "priority": "ALTA",
+      "date": "2024-06-11",
+      "status": "CONCLUIDA"
+    },
+    {
+      "id": 2,
+      "title": "Example Task 2",
+      "description": "This is another example task description.",
+      "priority": "MEDIA",
+      "date": "2024-06-12",
+      "status": "ATRASADA"
+    },
+    {
+      "id": 3,
+      "title": "Example Task 3",
+      "description": "This is a different example task description.",
+      "priority": "BAIXA",
+      "date": "2024-06-13",
+      "status": "PREVISTA"
+    },
+    {
+      "id": 4,
+      "title": "Example Task 4",
+      "description": "This is yet another example task description.",
+      "priority": "ALTA",
+      "date": "2024-06-14",
+      "status": "PREVISTA"
+    }
+  ]
+  
