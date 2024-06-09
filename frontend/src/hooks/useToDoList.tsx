@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { toDoListService } from '../services/toDoListService';
 import { TaskProps } from '../components/Task';
-import TaskMockData from '../common/mock/mockDataTask.json';
 import { CreateTasksRequestDTO, UpdateTasksRequestDTO } from '../services/toDoListService';
 
 export const useToDoList = () => {
@@ -33,7 +32,7 @@ export const useToDoList = () => {
 
   useEffect(() => {
     const fetchTasks = async () => {
-      const tasks = TaskMockData;
+      const tasks = getTasks();
       if (tasks) {
         setTasks(tasks);
       }

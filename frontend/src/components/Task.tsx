@@ -49,7 +49,7 @@ export const Task: React.FC<TaskProps> = ({ id, title, description, priority, da
         <span>{status}</span>
       </div>
       <Modal isOpen={isEditTaskModalOpen} onClose={closeEditTaskModal}>
-        <h2 className="text-3xl font-bold mb-4 text-main-color text-center">Criar tarefa</h2>
+        <h2 className="text-3xl font-bold mb-4 text-main-color text-center">Alterar tarefa</h2>
         <form>
           <div className="mb-4">
             <label htmlFor="title" className="block text-md text-main-color font-bold">Título</label>
